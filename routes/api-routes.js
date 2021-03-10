@@ -45,4 +45,16 @@ router.get("/api/workouts/range", async (req, res, next) => {
   }
 });
 
+router.post("/api/workouts", async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const workout = await Workout.findByIdAndUpdate(id, {
+      $push: { exercises: req.body },
+    });
+    res.json(workout);
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;
