@@ -40,6 +40,7 @@ router.get("/api/workouts/range", async (req, res, next) => {
       { $limit: 7 },
       { $sort: { day: 1 } },
     ]).exec();
+    res.json(workouts);
   } catch (e) {
     next(e);
   }

@@ -1,17 +1,25 @@
 require("./models/workout");
 const express = require("express");
-const morgan = require("morgan");
+const mongoose = require("mongoose");
+// const morgan = require("morgan");
 const htmlRoutes = require("./routes/html-routes");
 const apiRoutes = require("./routes/api-routes");
 
-const app = express();
-app.use(htmlRoutes);
-app.use(apiRoutes);
+mongoose.connect("mongodb://localhost:27017/workout", {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+  useCreateIndex: false,
+});
 
-app.use(express.urlencoded({ extended: false }));
+const app = express();
+
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(express.json());
-app.use(morgan("combined"));
+// app.use(morgan("combined"));
+app.use(htmlRoutes);
+app.use(apiRoutes);
 
 app.use((err, req, res, next) => {
   const { status = 500, message = "Something went wrong" } = err;
