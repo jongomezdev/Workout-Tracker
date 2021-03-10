@@ -47,6 +47,15 @@ router.get("/api/workouts/range", async (req, res, next) => {
 
 router.post("/api/workouts", async (req, res, next) => {
   try {
+    const workout = await Workout.create(req.body);
+    res.json(workout);
+  } catch (e) {
+    next(e);
+  }
+});
+
+router.put("/api/workouts/:id", async (req, res, next) => {
+  try {
     const id = req.params.id;
     const workout = await Workout.findByIdAndUpdate(id, {
       $push: { exercises: req.body },
