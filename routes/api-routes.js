@@ -50,26 +50,24 @@ router.get(
   })
 );
 
-router.post("/api/workouts", async (req, res, next) => {
-  try {
+router.post(
+  "/api/workouts",
+  catchAsync(async (req, res, next) => {
     const workout = await Workout.create(req.body);
     res.json(workout);
-  } catch (e) {
-    next(e);
-  }
-});
+  })
+);
 
-router.put("/api/workouts/:id", async (req, res, next) => {
-  try {
+router.put(
+  "/api/workouts/:id",
+  catchAsync(async (req, res, next) => {
     const id = req.params.id;
     const workout = await Workout.findByIdAndUpdate(id, {
       $push: { exercises: req.body },
     });
     res.json(workout);
-  } catch (e) {
-    next(e);
-  }
-});
+  })
+);
 
 app.use((err, req, res, next) => {
   const { status = 500, message = "Something went wrong" } = err;
