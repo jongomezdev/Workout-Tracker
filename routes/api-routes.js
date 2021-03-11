@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = express.Router();
-
 const Workout = mongoose.model("workout");
+const app = express();
 
 router.get("/api/workouts", async (req, res, next) => {
   try {
@@ -65,6 +65,11 @@ router.put("/api/workouts/:id", async (req, res, next) => {
   } catch (e) {
     next(e);
   }
+});
+
+app.use((err, req, res, next) => {
+  const { status = 500, message = "Something went wrong" } = err;
+  res.status(status).send(message);
 });
 
 module.exports = router;
