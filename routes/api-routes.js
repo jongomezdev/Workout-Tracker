@@ -4,6 +4,7 @@ const router = express.Router();
 const Workout = mongoose.model("workout");
 const app = express();
 
+//Defining an async utility to handle errors
 function catchAsync(fn) {
   return function (req, res, next) {
     fn(req, res, next).catch((e) => next(e));
