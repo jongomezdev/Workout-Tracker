@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const htmlRoutes = require("./routes/html-routes");
 const apiRoutes = require("./routes/api-routes");
 
+const PORT = process.env.PORT || 3000;
+
 mongoose.connect("mongodb://localhost:27017/workout", {
   useNewUrlParser: true,
   useFindAndModify: false,
@@ -32,8 +34,8 @@ app.use((err, req, res, next) => {
   res.status(status).send(message);
 });
 
-app.listen(3000, () => {
-  console.log("Serving on port 3000");
+app.listen(PORT, () => {
+  console.log(`Serving on port ${PORT}`);
 });
 
 module.exports = app;
