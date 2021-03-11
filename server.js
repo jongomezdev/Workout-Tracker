@@ -7,7 +7,7 @@ const apiRoutes = require("./routes/api-routes");
 
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect("mongodb://localhost:27017/workout", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
