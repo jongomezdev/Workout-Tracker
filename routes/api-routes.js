@@ -4,8 +4,15 @@ const router = express.Router();
 const Workout = mongoose.model("workout");
 const app = express();
 
-router.get("/api/workouts", async (req, res, next) => {
-  try {
+function catchAsync(fn) {
+  return function (req, res, next) {
+    fn(req, res, next).catch((e) => next(e));
+  };
+}
+
+router.get(
+  "/api/workouts",
+  catchAsync(async (req, res, next) => {
     const workouts = await Workout.aggregate([
       {
         $addFields: {
@@ -21,13 +28,12 @@ router.get("/api/workouts", async (req, res, next) => {
       },
     ]).exec();
     res.json(workouts);
-  } catch (e) {
-    next(e);
-  }
-});
+  })
+);
 
-router.get("/api/workouts/range", async (req, res, next) => {
-  try {
+router.get(
+  "/api/workouts/range",
+  catchAsync(async (req, res, next) => {
     const workouts = await Workout.aggregate([
       {
         $addFields: {
@@ -41,10 +47,8 @@ router.get("/api/workouts/range", async (req, res, next) => {
       { $sort: { day: 1 } },
     ]).exec();
     res.json(workouts);
-  } catch (e) {
-    next(e);
-  }
-});
+  })
+);
 
 router.post("/api/workouts", async (req, res, next) => {
   try {
