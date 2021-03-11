@@ -1,30 +1,60 @@
 # Workout-Tracker
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 View create and track daily workouts, log multiple exercises in a workout on a given day. Cardio can be tracked by distance traveled.
+
+## Description
 
 - As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
 
-## Business Context
+## Table of Contents
 
-A consumer will reach their fitness goals more quickly when they track their workout progress.
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Questions](#questions)
 
-## Acceptance Criteria
+## Installation
 
-When the user loads the page, they should be given the option to create a new workout or continue with their last workout.
+Clone the repo and run `npm install` for the required dependencies
 
-The user should be able to:
+## Usage
 
-- Add exercises to the most recent workout plan.
+- Application will be invoked by using the `node server.js` command in the terminal.
+- To seed the database run `node seeders/seed.js` in the terminal
 
-- Add new exercises to a new workout plan.
+## License
 
-- View the combined weight of multiple exercises from the past seven workouts on the `stats` page.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>
 
-- View the total duration of each workout from the past seven workouts on the `stats` page.
+## Contributing
 
-> **Important:** Look into using a MongoDB aggregate function to dynamically add up and return the total duration for each workout. Check out the [MongoDB documentation on the $addFields](https://docs.mongodb.com/manual/reference/operator/aggregation/addFields/), the [MongoDB documentation on the $sum operator](https://docs.mongodb.com/manual/reference/operator/aggregation/sum/), and the [Mongoose documentation on aggregate functions](https://mongoosejs.com/docs/api.html#aggregate_Aggregate) to learn how it can be accomplished.
+Open source, feel free to modify and change!
 
-To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
+## Questions
+
+Check out my other repositories in the link below:
+
+- [GitHub Profile](https://github.com/jongomezdev)
+
+- For any additional questions, please [email](mailto:jongomezdev@gmail.com) me.
+
+## Demo
+
+The following media demonstrates the application functionality:
+
+![Workout Dashboard](public/assets/workout-tracker.png)
 
 - [Set Up MongoDB Atlas](../04-Important/MongoAtlas-Setup.md)
 
