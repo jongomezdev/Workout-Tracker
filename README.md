@@ -53,8 +53,8 @@ Check out my other repositories in the link below:
 
 ## Links
 
-[Deployed App](https://jg-workout-tracker.herokuapp.com/)
-[Repo](https://github.com/jongomezdev/Workout-Tracker)
+- [Deployed App](https://jg-workout-tracker.herokuapp.com/)
+- [Repo](https://github.com/jongomezdev/Workout-Tracker)
 
 ## Demo
 
