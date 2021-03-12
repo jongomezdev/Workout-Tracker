@@ -15,6 +15,7 @@ View create and track daily workouts, log multiple exercises in a workout on a g
 - [License](#license)
 - [Contributing](#contributing)
 - [Questions](#questions)
+- [Links](#links)
 
 ## Installation
 
@@ -50,12 +51,13 @@ Check out my other repositories in the link below:
 
 - For any additional questions, please [email](mailto:jongomezdev@gmail.com) me.
 
+## Links
+
+[Deployed App](https://jg-workout-tracker.herokuapp.com/)
+[Repo](https://github.com/jongomezdev/Workout-Tracker)
+
 ## Demo
 
 The following media demonstrates the application functionality:
 
 ![Workout Dashboard](public/assets/workout-tracker.png)
-
-- [Set Up MongoDB Atlas](../04-Important/MongoAtlas-Setup.md)
-
-- [Deploy with Heroku and MongoDB Atlas](../04-Important/MongoAtlas-Deploy.md)

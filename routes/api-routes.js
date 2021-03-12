@@ -71,8 +71,7 @@ router.put(
 );
 
 app.use((err, req, res, next) => {
-  const { status = 500, message = "Something went wrong" } = err;
-  res.status(status).send(message);
+  res.send("Something went wrong!");
 });
 
 module.exports = router;
